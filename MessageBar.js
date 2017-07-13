@@ -363,13 +363,14 @@ class MessageBar extends Component {
     return (
       <Animated.View style={{ transform: this.animationTypeTransform, backgroundColor: this.state.backgroundColor, borderColor: this.state.strokeColor, borderBottomWidth: 1, position: 'absolute', top: this.state.viewTopOffset, bottom: this.state.viewBottomOffset, left: this.state.viewLeftOffset, right: this.state.viewRightOffset, paddingTop: this.state.viewTopInset, paddingBottom: this.state.viewBottomInset, paddingLeft: this.state.viewLeftInset, paddingRight: this.state.viewRightInset }}>
         <TouchableOpacity onPress={()=>{this._alertTapped()}} style={{ flex: 1 }}>
-          <View style={{ flex: 1, flexDirection: 'row', alignItems: 'flex-end', padding: 10 }} >
-            { this.renderImage() }
-            <View style={{ flex: 1, flexDirection: 'column', alignSelf: 'stretch', justifyContent: 'center', marginLeft: 10 }} >
+          <View style={{ flex: 1, flexDirection: 'column', alignItems: 'stretch', paddingHorizontal: 13 }} >
+            <View style={{ flex: 1, flexDirection: 'row', alignItems: 'center', justifyContent: 'flex-start', marginVertical: 5 }} >
+              { this.renderImage() }
               { this.renderTitle() }
-              { this.renderMessage() }
             </View>
+              { this.renderMessage() }
           </View>
+          <View style={{ alignSelf: 'center', width: 36, height: 4, backgroundColor: 'rgba(255, 255, 255, 0.6)', marginTop: 8, marginBottom: 3, borderRadius: 2 }}/>
         </TouchableOpacity>
       </Animated.View>
     );
